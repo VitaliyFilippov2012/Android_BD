@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView_abs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_absolute"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="20dp"
+                tools:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/absolute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="20dp"
+                tools:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_name"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="50dp"
+                tools:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="20dp"
+                tools:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_path"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_path"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="80dp"
+                tools:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="20dp"
+                tools:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_rw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_rw"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="110dp"
+                tools:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/rw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="20dp"
+                tools:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <TextView
+                android:id="@+id/textView_ext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_external"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="140dp"
+                tools:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/ext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="20dp"
+                tools:textSize="24sp" />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button_getfdir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickGetFilesDir"
+        android:text="@string/butt_getfdir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <Button
+        android:id="@+id/button_getcahedir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_getfdir"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickGetCashDir"
+        android:text="@string/butt_getcahedir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_getfdir" />
+
+    <Button
+        android:id="@+id/button_getextfdir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickGetExternalFilesDir"
+        android:text="@string/butt_getextfdir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_getcahedir" />
+
+    <Button
+        android:id="@+id/button_getextcahedir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickGetExtCashDir"
+        android:text="@string/butt_getextcahedir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_getextfdir" />
+
+    <Button
+        android:id="@+id/button_getextstordir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickGetExtStorDir"
+        android:text="@string/butt_getextstordir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_getextcahedir" />
+
+    <Button
+        android:id="@+id/button_getextstorpubdir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickGetExtStorPubDir"
+        android:text="@string/butt_getextstorpubdir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_getextstordir" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

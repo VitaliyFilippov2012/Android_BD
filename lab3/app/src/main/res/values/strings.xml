@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My lab №3</string>
+    <string name="text_absolute">Absolute: </string>
+    <string name="text_name">Name: </string>
+    <string name="text_path">Path: </string>
+    <string name="text_rw">Read/Write: </string>
+    <string name="text_external">External: </string>
+    <string name="butt_getfdir">GETFILESDIR</string>
+    <string name="butt_getcahedir">GETCAHEDIR</string>
+    <string name="butt_getextfdir">GETEXTERNALFILESDIR</string>
+    <string name="butt_getextcahedir">GETEXTERNALCAHEDIR</string>
+    <string name="butt_getextstordir">GETEXTERNALSTORAGEDIR</string>
+    <string name="butt_getextstorpubdir">GETEXTERNALSTORAGEPUBLICDIR</string>
+</resources>
