@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">lab4</string>
+    <string name="text_surname">Фамилия</string>
+    <string name="text_name">Имя</string>
+    <string name="text_input">Ввод</string>
+</resources>
