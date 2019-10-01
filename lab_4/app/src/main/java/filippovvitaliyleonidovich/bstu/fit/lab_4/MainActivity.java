@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         workWithFile = new WorkWithFile(getFilesDir()+"infoText.txt");
         if(!workWithFile.checkFile()){
             AlertDialog.Builder b= new AlertDialog.Builder(this);
-            b.setTitle("Файл infoText.txt отсутствует. Потвердите создание infoText.txt").setPositiveButton("Да", new DialogInterface.OnClickListener() {
+            b.setTitle("Создать infoText.txt").setPositiveButton("Да", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Log.d("Log_02", "Создание файла " + "infoText.txt");

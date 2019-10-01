@@ -1,6 +1,7 @@
 package filippovvitaliyleonidovich.bstu.fit.lab_4;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -47,7 +48,8 @@ public class WorkWithFile {
         StringBuilder builder;
         try{
             FileReader fileReader = new FileReader(file);
-            char[] nw =new char[10000];
+            FileInputStream fi = new FileInputStream(file);
+            char[] nw =new char[fi.available()];
             fileReader.read(nw);
             builder = new StringBuilder();
             for (int i = 0; i < nw.length; ++i) {
