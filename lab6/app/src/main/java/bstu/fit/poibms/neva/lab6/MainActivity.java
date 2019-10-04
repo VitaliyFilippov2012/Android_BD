@@ -1,4 +1,4 @@
-tgnjn8knujpackage bstu.fit.poibms.neva.lab6;
+package bstu.fit.poibms.neva.lab6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
