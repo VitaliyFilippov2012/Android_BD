@@ -8,5 +8,7 @@
     <string name="text_birthday">Birthday</string>
     <string name="text_write_a">Write A</string>
     <string name="text_write_b">Write B</string>
-    <string name="text_enter">Enter name or surname</string>
+    <string name="text_enterName">Enter name</string>
+    <string name="text_enterSurname">Enter surname</string>
+    <string name="text_noContact">No contact</string>
 </resources>
