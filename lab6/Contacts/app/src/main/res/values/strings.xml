@@ -5,7 +5,7 @@
     <string name="text_surname">Surname</string>
     <string name="text_name">Name</string>
     <string name="text_phone">Phone</string>
-    <string name="text_birthday">Birthday</string>
+    <string name="text_birthday">Birthday [dd].[mm].[yyyy]</string>
     <string name="text_write_a">Write A</string>
     <string name="text_write_b">Write B</string>
     <string name="text_enterName">Enter name</string>
