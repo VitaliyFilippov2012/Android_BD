@@ -2,6 +2,7 @@ package bstu.fit.poibms.neva.lab6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class CreateContact extends AppCompatActivity {
 
@@ -18,6 +20,8 @@ public class CreateContact extends AppCompatActivity {
     private EditText editPhone;
     private EditText editName;
     private EditText editSurname;
+    final int COUNT_VALID_FIELDS = 4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,19 +50,11 @@ public class CreateContact extends AppCompatActivity {
                 if (editDate.getText().toString().matches(regexp)) {
                     ImageView validIcon = (ImageView)findViewById(R.id.valid_birthday);
                     validIcon.setVisibility(View.VISIBLE);
-
                     String[] parts = editDate.getText().toString().split("[\\/\\.]");
-                    Log.d("lab6",parts[0]);
-                    Log.d("lab6",parts[1]);
-                    Log.d("lab6",parts[2]);
-
                     int year =Integer.valueOf(parts[2]) ;
                     int month = Integer.valueOf(parts[1]);
                     int day = Integer.valueOf(parts[0]);
-
-
                     datePicker.updateDate(year+1-1,month-1+1,day+1-1);
-
 
                 }
                 else{
@@ -98,6 +94,7 @@ public class CreateContact extends AppCompatActivity {
                 else{
                     ImageView validIcon = (ImageView)findViewById(R.id.valid_name);
                     validIcon.setVisibility(View.INVISIBLE);
+
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -125,12 +122,29 @@ public class CreateContact extends AppCompatActivity {
     }
 
     public void onClickButtonWriteA(View view){
+        if(checkCountValid()){
 
+        }
     }
 
     public void  onClickButtonWriteB(View view){
+        if(checkCountValid()){
 
+        }
     }
 
+    private boolean checkCountValid(){
+        ImageView[] arrImageView = {findViewById(R.id.valid_phone),findViewById(R.id.valid_name),findViewById(R.id.valid_surname),findViewById(R.id.valid_birthday)};
+        int currentCountValidFields = 0;
+        for(ImageView item : arrImageView){
+            if(item.getVisibility() == View.VISIBLE){
+                currentCountValidFields++;
+            }
+        }
+        if(currentCountValidFields !=COUNT_VALID_FIELDS){
+            return false;
+        }
+        return true;
+    }
 
 }
