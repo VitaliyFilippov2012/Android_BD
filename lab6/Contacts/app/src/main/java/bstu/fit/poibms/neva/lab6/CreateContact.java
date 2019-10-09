@@ -123,7 +123,6 @@ public class CreateContact extends AppCompatActivity {
 
     public void onClickButtonWriteA(View view){
         if(checkCountValid()){
-
         }
     }
 

@@ -1,4 +1,4 @@
-package bstu.fit.poibms.neva.lab6;
+package bstu.fit.poibms.neva.lab6.birthdaysearch;
 
 public class Contacts {
     private  String name;
