@@ -20,7 +20,7 @@ public class Contacts {
 
     @Override
     public String toString(){
-        return "Main:";
+        return "Name: "+getName()+" Surname: "+getSurname()+"Phone: "+getPhone()+"Birthday: "+getBirthday();
     }
 
 }
