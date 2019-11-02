@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+            <EditText
+                android:id="@+id/edit_event_name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="45dp"
+                android:autofillHints="true"
+                android:hint="@string/event_name"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/edit_event_info"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:autofillHints="true"
+                android:hint="@string/info_about_event"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_event_name" />
+
+            <EditText
+                android:id="@+id/edit_event_date"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:autofillHints="true"
+                android:hint="@string/date_of_event"
+                android:inputType="date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_event_info" />
+
+            <DatePicker
+                android:id="@+id/date_birthday"
+                android:layout_width="351dp"
+                android:layout_height="440dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_event_date" />
+
+            <Button
+                android:id="@+id/butt_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="onClickButtonSave"
+                android:text="@string/save"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date_birthday" />
+
+            <ImageView
+                android:id="@+id/valid_name"
+                android:layout_width="39dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="45dp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toEndOf="@+id/edit_event_name"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:srcCompat="@android:drawable/checkbox_on_background"
+                android:contentDescription="TODO" />
+
+            <ImageView
+                android:id="@+id/valid_info"
+                android:layout_width="39dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toEndOf="@+id/edit_event_info"
+                app:layout_constraintTop_toBottomOf="@+id/valid_name"
+                app:srcCompat="@android:drawable/checkbox_on_background"
+                android:contentDescription="TODO" />
+
+            <ImageView
+                android:id="@+id/valid_date"
+                android:layout_width="39dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toEndOf="@+id/edit_event_date"
+                app:layout_constraintTop_toBottomOf="@+id/valid_info"
+                app:srcCompat="@android:drawable/checkbox_on_background"
+                android:contentDescription="TODO" />
+</androidx.constraintlayout.widget.ConstraintLayout>
