@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">lab6</string>
+    <string name="app_name">Contacts</string>
+    <string name="text_searchContacts">Search contacts</string>
+    <string name="text_createNewContact">Create new contact</string>
+    <string name="text_surname">Surname</string>
+    <string name="text_name">Name</string>
+    <string name="text_phone">Phone</string>
+    <string name="text_birthday">Birthday [dd].[mm].[yyyy]</string>
+    <string name="text_write_a">Write A</string>
+    <string name="text_write_b">Write B</string>
+    <string name="text_enterName">Enter name</string>
+    <string name="text_enterSurname">Enter surname</string>
+    <string name="text_noContact">No contact</string>
 </resources>
