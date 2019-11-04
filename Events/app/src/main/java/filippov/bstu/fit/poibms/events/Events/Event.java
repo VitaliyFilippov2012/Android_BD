@@ -2,18 +2,19 @@ package filippov.bstu.fit.poibms.events.Events;
 
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Event {
     private String name;
     private String info;
-    private Date date;
+    private String  date;
 
-    public Event(String name,String info,Date date){
+    public Event(String name,String info,String date){
         this.name = name;
         this.info = info;
         this.date = date;
-        Log.d("Event", "Create object Event");
+        Log.d("MyEvent", "Create object Event");
     }
 
     public String getName() {
@@ -21,7 +22,7 @@ public class Event {
     }
     public void setName(String name) {
         this.name = name;
-        Log.d("Event", "Set new value of name");
+        Log.d("MyEvent", "Set new value of name");
     }
 
     public String getInfo() {
@@ -29,23 +30,24 @@ public class Event {
     }
     public void setInfo(String info) {
         this.info = info;
-        Log.d("Event", "Set new value of info");
+        Log.d("MyEvent", "Set new value of info");
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
-    public void setDate(Date date) {
+    public void setDate(String  date) {
         this.date = date;
-        Log.d("Event", "Set new value of date");
+        Log.d("MyEvent", "Set new value of date");
     }
 
-    public String getStringDate(){
-        return this.date.toString();
-    }
 
     @Override
     public String toString(){
-        return "Event: " + this.getName() +"\n" + this.getInfo()+"\n Date: "+this.getDate()+ this.getStringDate();
+        return "MyEvent: " + this.getName() +"\n" + this.getInfo()+"\n Date: "+this.getDate();
+    }
+
+    public boolean compareEvent(Event e) {
+        return this.getDate().equals(e.getDate());
     }
 }

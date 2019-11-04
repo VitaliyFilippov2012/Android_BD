@@ -15,13 +15,13 @@ public class WorkWithFile{
         this.file = new File(fileName);
     }
 
-    public boolean createFile() {
+    public boolean createFile(boolean reset) {
         try {
-            if (checkFile()) {
+            if ( reset && checkFile()) {
                 deleteFile();
             }
             file.createNewFile();
-            Log.d("Event", "Создали файл: " + file.getName());
+            Log.d("MyEvent", "Создали файл: " + file.getName());
         }
         catch (IOException e) {
             return false;
@@ -31,7 +31,7 @@ public class WorkWithFile{
 
     public boolean deleteFile() {
         file.delete();
-        Log.d("Event","Удалили файл: "+file.getName());
+        Log.d("MyEvent","Удалили файл: "+file.getName());
 
         return !checkFile();
     }

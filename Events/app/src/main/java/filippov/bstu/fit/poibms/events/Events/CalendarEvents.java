@@ -15,34 +15,49 @@ public class CalendarEvents {
     static {
         events = new ArrayList<Event>();
         loadFromFile();
+        Log.d("MyEvent","Static block");
+
     }
 
     public static ArrayList<Event> getEvents(){
         return events;
     }
 
-    public static ArrayList<Event> getEventByDate(Date date){
-        ArrayList<Event> eventsWithDate = new ArrayList<>();
+    public static Event getEventByDate(String dateWithFormatYYYYMMDD){
         for(Event e:events){
-            if(e.getDate().equals(date)){
-                eventsWithDate.add(e);
+            if(e.getDate().equals(dateWithFormatYYYYMMDD)){
+                return e;
             }
         }
-        return eventsWithDate;
+        return null;
     }
 
     public static boolean addEvent(Event event){
+        Event oldEvent = checkEventWithThisDate(event);
+        if(oldEvent!=null){
+            return changeEvent(oldEvent,event);
+        }
         events.add(event);
-        Log.d("Event","Add new event");
+        Log.d("MyEvent","Add new event");
         task.run();
         return true;
     }
 
+    private static Event checkEventWithThisDate(Event e){
+        for(Event e1:events){
+            if(e.compareEvent(e1)){
+                return e1;
+            }
+        }
+        return null;
+    }
+
     public static boolean removeEvent(Event event){
-        if(events.contains(event)){
-            events.remove(event);
+        Event existsEvent = checkEventWithThisDate(event);
+        if(existsEvent!=null){
+            events.remove(existsEvent);
             task.run();
-            Log.d("Event","Remove event");
+            Log.d("MyEvent","Remove event");
             return true;
         }
         return false;
@@ -53,7 +68,7 @@ public class CalendarEvents {
             events.remove(oldEvent);
             events.add(newEvent);
             task.run();
-            Log.d("Event","Change event");
+            Log.d("MyEvent","Change event");
             return true;
         }
         return false;
@@ -69,12 +84,12 @@ public class CalendarEvents {
 
     private static void synchronizedEventsWithFile(){
         WorkWithFile wfS = new WorkWithFile(Constants.EVENTS);
-        wfS.createFile();
+        wfS.createFile(true);
         WorkWithFileJSON<Event> workWithFileJSONS = new WorkWithFileJSON<Event>(wfS);
         for(Event e: events){
             workWithFileJSONS.saveAsJson(e);
         }
-        Log.d("Event","synchronized");
+        Log.d("MyEvent","synchronized");
 
     }
 
@@ -82,7 +97,7 @@ public class CalendarEvents {
         WorkWithFile wfS = new WorkWithFile(Constants.EVENTS);
         WorkWithFileJSON<Event> workWithFileJSONS = new WorkWithFileJSON<Event>(wfS);
         events = workWithFileJSONS.deserialize(new TypeToken<Event>(){}.getType());
-        Log.d("Event","loadFromFile");
+        Log.d("MyEvent","loadFromFile");
     }
 
     @Override

@@ -27,19 +27,18 @@ public class WorkWithFileJSON<T>{
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(wf.file));
-
             while ((str = br.readLine()) != null) {
                 text.append(str);
                 text.append('\n');
             }
-            Log.d("WorkWithFile",String.valueOf(text));
+            Log.d("MyEvent",String.valueOf(text));
             String[] findStrings = String.valueOf(text).split("\n");
             ArrayList<T> findObj = new ArrayList<T>();
             String[] array = new String[2];
             for (String s: findStrings) {
                 if(!s.isEmpty()){
                     findObj.add((T)gson.fromJson(String.valueOf(s), type));
-                    Log.d("Event","Вынули из файла: "+s);
+                    Log.d("MyEvent","Вынули из файла: "+s);
                 }
 
             }
@@ -47,9 +46,9 @@ public class WorkWithFileJSON<T>{
             return findObj;
 
         } catch (FileNotFoundException e) {
-            Log.d("Event", "Ошибка чтения из файла..");
+            Log.d("MyEvent", "Ошибка чтения из файла..");
         } catch (IOException e) {
-            Log.d("Event", "Ошибка чтения из файла..");
+            Log.d("MyEvent", "Ошибка чтения из файла..");
         }
         return null;
     }
@@ -57,7 +56,7 @@ public class WorkWithFileJSON<T>{
     public boolean saveAsJson(T obj){
         Gson gson = new Gson();
         String json = gson.toJson(obj);
-        Log.d("Event","Записали в файл: "+json);
+        Log.d("MyEvent","Записали в файл: "+json);
         try{
             FileWriter fileWriter = new FileWriter(wf.file, true);
             fileWriter.append(json);
@@ -66,7 +65,7 @@ public class WorkWithFileJSON<T>{
             fileWriter.close();
             return true;
         } catch (IOException e) {
-            Log.d("Event", "Ошибка записи в файл..");
+            Log.d("MyEvent", "Ошибка записи в файл..");
         }
         return false;
     }
