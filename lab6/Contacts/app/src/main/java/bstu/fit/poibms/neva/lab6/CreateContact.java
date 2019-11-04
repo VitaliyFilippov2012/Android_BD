@@ -2,16 +2,13 @@ package bstu.fit.poibms.neva.lab6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class CreateContact extends AppCompatActivity {
 
