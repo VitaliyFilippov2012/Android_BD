@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/new_p"
+        android:orderInCategory="1"
+        android:title="@string/add_new_category" />
+    <item
+        android:id="@+id/del_category"
+        android:orderInCategory="1"
+        android:title="@string/delete_category" />
+    <item
+        android:id="@+id/del_all_category"
+        android:orderInCategory="1"
+        android:title="@string/delete_all_category" />
+    <item
+        android:id="@+id/del_event"
+        android:orderInCategory="1"
+        android:title="@string/delete_all_events" />
+    <item
+        android:id="@+id/xpath"
+        android:orderInCategory="1"
+        android:title="@string/search_with_xpath" />
+</menu>

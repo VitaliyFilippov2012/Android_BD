@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Events</string>
+    <string name="event_name">Event Name</string>
+    <string name="info_about_event">Info about event</string>
+    <string name="date_of_event">Date of event</string>
+    <string name="save">Save</string>
+    <string name="remove">Remove</string>
+    <string name="show_calendar">Show calendar</string>
+    <string name="category">Category</string>
+    <string name="delete_category">Delete category</string>
+    <string name="change">Change</string>
+    <string name="add_new_category">Add new category</string>
+    <string name="enter_name_of_category">Enter name of category</string>
+    <string name="delete_all_category">Delete all categories</string>
+    <string name="delete_all_events">Delete all events</string>
+    <string name="search">Search</string>
+    <string name="search_with_xpath">Search with XPath</string>
+</resources>
