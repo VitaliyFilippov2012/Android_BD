@@ -98,6 +98,7 @@ public class CalendarEvents {
 
     private static void synchronizedEventsWithFile(){
         WorkWithFile wfS = new WorkWithFile(Constants.EVENTS);
+        wfS.createFile(true);
         WorkWithXML xml = new WorkWithXML(wfS);
         xml.serializeToXMLDocument(Category.getCategoryNames(),CalendarEvents.getEvents());
         Log.d("MyEvent","synchronized");
@@ -105,6 +106,7 @@ public class CalendarEvents {
 
     private static void loadFromFile(){
         WorkWithFile wfS = new WorkWithFile(Constants.EVENTS);
+        wfS.createFile(false);
         WorkWithXML xml = new WorkWithXML(wfS);
         xml.deserialize();
         Log.d("MyEvent","loadFromFile");

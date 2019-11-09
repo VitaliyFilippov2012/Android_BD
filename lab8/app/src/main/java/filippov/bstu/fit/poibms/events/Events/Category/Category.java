@@ -61,6 +61,7 @@ public class Category {
 
     private static void loadFromFile(){
         WorkWithFile wfC = new WorkWithFile(Constants.Category_JSON);
+        wfC.createFile(false);
         WorkWithFileJSON<String> workWithFileJSONS = new WorkWithFileJSON<String>(wfC);
         categoryNames = workWithFileJSONS.deserialize(new TypeToken<String>(){}.getType());
         Log.d("MyEvent","loadFromFile");

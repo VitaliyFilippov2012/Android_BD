@@ -11,11 +11,17 @@
         android:orientation="vertical"
         android:layout_weight="0">
 
-        <EditText
-            android:id="@+id/XPathEditText"
-            android:layout_width="match_parent"
+        <Spinner
+            android:id="@+id/edit_event_category"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="@string/category" />
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"
+            android:autofillHints="true"
+            android:hint="@string/category"
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_event_date" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
