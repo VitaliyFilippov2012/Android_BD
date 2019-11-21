@@ -126,8 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button4:
                 result="";
                 check(database,id_value);
-
-                if(result!="") {
+                if(result.isEmpty()) {
                     Log.d("Lab9", "--- Update table: ---");
                     contentValues.put(Config.KEY_F,f_value);
                     contentValues.put(Config.KEY_T, t_value);
@@ -146,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 result="";
                 check(database,id_value);
 
-                if(result!="") {
+                if(result.isEmpty()) {
                     Log.d("Lab9", "--- Delete value from  table: ---");
                     int delCount = database.delete(Config.TABLE, "_id = " + id_value, null);
                     Log.d("Lab9", "deleted rows count = " + delCount);

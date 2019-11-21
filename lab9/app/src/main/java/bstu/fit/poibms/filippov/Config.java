@@ -1,7 +1,7 @@
 package bstu.fit.poibms.filippov;
 
 public class Config {
-    public static final int DATABASE_VERSION = 1;
+    public static int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "lab9Db";
     public static final String TABLE = "MyTable";
 
